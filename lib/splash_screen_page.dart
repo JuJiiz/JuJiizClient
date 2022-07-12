@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jujiiz_engine/login_page.dart';
+import 'package:nud_core/routing/page_routing.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({Key? key}) : super(key: key);
@@ -12,11 +12,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
-    _waitAndGoToLogin(
-      () => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      ),
-    );
+    _waitAndGoToLogin(() => PageRouting.pushReplacementNamed(context, '/home'));
   }
 
   _waitAndGoToLogin(Function callback) async {
